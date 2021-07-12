@@ -104,19 +104,15 @@ public abstract class AppCompatActivityWithNavigationDrawer extends AppCompatAct
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        // Pass the event to ActionBarDrawerToggle, if it returns
-        // true, then it has handled the app icon touch event
         if ( this.actionBarDrawerToggle.onOptionsItemSelected(item) ){
             return true;
         }
-        // Handle your other action bar items...
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState){
         super.onPostCreate(savedInstanceState);
-        // Sync the toggle state after onRestoreInstanceState has occurred.
         this.actionBarDrawerToggle.syncState();
     }
 
@@ -125,4 +121,7 @@ public abstract class AppCompatActivityWithNavigationDrawer extends AppCompatAct
         super.onConfigurationChanged(newConfig);
         this.actionBarDrawerToggle.onConfigurationChanged(newConfig);
     }
+
+    @Override
+    public void onBackPressed(){}
 }

@@ -7,20 +7,22 @@ import android.widget.EditText;
 import com.jboard.task.UserLoginTask;
 
 public class LoginActivity extends AppCompatActivity {
+    private void onLoginButtonClick(View view){
+        EditText loginPassword = this.findViewById(R.id.loginPassword);
+        EditText loginAccount = this.findViewById(R.id.loginAccount);
+        String password = loginPassword.getText().toString();
+        String account = loginAccount.getText().toString();
+        UserLoginTask userLoginTask = new UserLoginTask(this, account, password);
+        userLoginTask.execute();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        this.findViewById(R.id.loginButton).setOnClickListener(this::onLoginButtonClick);
     }
 
-    public void onLoginButtonClick(View view){
-        int id = getResources().getIdentifier("account", "id", getPackageName());
-        EditText editText = (EditText)this.findViewById(id);
-        String account = editText.getText().toString();
-        id = getResources().getIdentifier("password", "id", getPackageName());
-        editText = (EditText)this.findViewById(id);
-        String password = editText.getText().toString();
-        UserLoginTask userLoginTask = new UserLoginTask(this, account, password);
-        userLoginTask.execute();
-    }
+    @Override
+    public void onBackPressed(){}
 }

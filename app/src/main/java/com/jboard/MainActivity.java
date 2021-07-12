@@ -12,4 +12,7 @@ public class MainActivity extends AppCompatActivity {
         UserGetTask userGetTask = new UserGetTask(this);
         userGetTask.execute();
     }
+
+    @Override
+    public void onBackPressed(){}
 }
