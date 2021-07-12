@@ -1,5 +1,6 @@
 package com.jboard.task;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,10 +23,12 @@ public class UserLoginTask extends AsyncTask<Void, Void, Void> {
         }catch(NetworkException ex){
             ex.setTask(this).showAlert(this.context);
         }catch(UnauthorizedException ex){
-            AlertDialog alertDialog = new AlertDialog.Builder(this.context).create();
-            alertDialog.setMessage("Provided credentials are not valid.");
-            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", (DialogInterface dialog, int which) -> alertDialog.dismiss());
-            alertDialog.show();
+            ((Activity)this.context).runOnUiThread(() -> {
+                AlertDialog alertDialog = new AlertDialog.Builder(this.context).create();
+                alertDialog.setMessage("Provided credentials are not valid.");
+                alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK", (DialogInterface dialog, int which) -> alertDialog.dismiss());
+                alertDialog.show();
+            });
         }
         return null;
     }

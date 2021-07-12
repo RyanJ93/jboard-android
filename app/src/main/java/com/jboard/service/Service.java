@@ -37,10 +37,20 @@ public abstract class Service {
         return stringBuilder.toString().getBytes("UTF-8");
     }
 
-    protected void checkResponse(JSONObject response) throws UnauthorizedException, InvalidInputException, OperationalException, NetworkException {
+    private void checkResponse(JSONObject response) throws UnauthorizedException, InvalidInputException, OperationalException, NetworkException {
         try{
             int code = response.has("code") ? response.getInt("code") : 0;
-            if ( !Arrays.asList(this.ignoredErrorCodes).contains(code) ){
+            boolean errorShouldBeHandled = true;
+            int j = 0;
+            if ( this.ignoredErrorCodes != null && this.ignoredErrorCodes.length > 0 ){
+                while ( errorShouldBeHandled && j < this.ignoredErrorCodes.length ){
+                    if ( this.ignoredErrorCodes[j] == code ){
+                        errorShouldBeHandled = false;
+                    }
+                    j++;
+                }
+            }
+            if ( errorShouldBeHandled ){
                 if ( code == 403 ){
                     throw new UnauthorizedException("Unauthorized.");
                 }else if ( code == 400 ){
