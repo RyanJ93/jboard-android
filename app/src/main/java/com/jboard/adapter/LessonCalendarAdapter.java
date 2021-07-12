@@ -54,7 +54,7 @@ public class LessonCalendarAdapter extends RecyclerView.Adapter<LessonCalendarAd
             if ( !lessonSlot.isAvailable() ){
                 TextView tick = holder.getTickByLessonSlot(lessonSlot);
                 if ( tick != null ){
-                    tick.setTextColor(Color.parseColor(lessonSlot.isMine() ? "#d35400" : "#fb782f"));
+                    tick.setTextColor(Color.parseColor(lessonSlot.isMine() ? "#d35400" : "#999999"));
                     tick.setVisibility(TextView.VISIBLE);
                 }
             }else if ( !lessonSlot.isEligible() ){

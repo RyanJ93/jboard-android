@@ -50,6 +50,7 @@ public class LessonsActivity extends AppCompatActivityWithNavigationDrawer {
         this.fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         this.fragmentTransaction.commit();
         final Context context = this;
+        lessonTabs.setSelectedTabIndicatorColor(this.getResources().getColor(R.color.orange));
         lessonTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
             @Override
             public void onTabSelected(TabLayout.Tab tab){
