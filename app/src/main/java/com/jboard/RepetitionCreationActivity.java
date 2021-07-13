@@ -96,13 +96,15 @@ public class RepetitionCreationActivity extends AppCompatActivity {
             Teacher teacher = this.teacherList.getTeacherList().get(repetitionCreationInputTeacher.getSelectedItemPosition());
             Course course = this.courseList.getCourseList().get(repetitionCreationInputCourse.getSelectedItemPosition());
             RepetitionCreateTask repetitionCreateTask = new RepetitionCreateTask(teacher, course, this.repetitionList, this);
-            repetitionCreateTask.execute();
+            repetitionCreateTask.setTeacherList(this.teacherList).setCourseList(this.courseList).execute();
         }
     }
 
     private void handleCancel(View view){
         Intent intent = new Intent(this, RepetitionsManagementActivity.class);
         intent.putExtra("repetitionList", this.repetitionList);
+        intent.putExtra("teacherList", this.teacherList);
+        intent.putExtra("courseList", this.courseList);
         this.startActivity(intent);
     }
 

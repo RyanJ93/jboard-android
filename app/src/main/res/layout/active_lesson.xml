@@ -47,8 +47,10 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:text="D"
         app:backgroundTint="@color/orange"
+        app:icon="@drawable/ic_trash_solid"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,8 +61,10 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:text="C"
         app:backgroundTint="@color/orange"
+        app:icon="@drawable/ic_check_solid"
+        app:iconPadding="0dp"
+        app:iconGravity="textStart"
         app:layout_constraintEnd_toStartOf="@+id/lessonDeleteButton"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

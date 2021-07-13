@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import com.jboard.adapter.RepetitionsManagementRepetitionAdapter;
+import com.jboard.model.Course;
 import com.jboard.model.CourseList;
 import com.jboard.model.RepetitionList;
 import com.jboard.model.TeacherList;

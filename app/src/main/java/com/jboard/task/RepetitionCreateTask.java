@@ -8,13 +8,17 @@ import com.jboard.RepetitionCreationActivity;
 import com.jboard.RepetitionsManagementActivity;
 import com.jboard.exception.*;
 import com.jboard.model.Course;
+import com.jboard.model.CourseList;
 import com.jboard.model.Repetition;
 import com.jboard.model.RepetitionList;
 import com.jboard.model.Teacher;
+import com.jboard.model.TeacherList;
 import com.jboard.service.RepetitionService;
 
 public class RepetitionCreateTask extends AsyncTask<Void, Void, Void> {
     private final RepetitionList repetitionList;
+    private TeacherList teacherList;
+    private CourseList courseList;
     private final Context context;
     private final Teacher teacher;
     private final Course course;
@@ -27,6 +31,8 @@ public class RepetitionCreateTask extends AsyncTask<Void, Void, Void> {
             this.repetitionList.getRepetitionList().add(repetition);
             Intent intent = new Intent(this.context, RepetitionsManagementActivity.class);
             intent.putExtra("repetitionList", this.repetitionList);
+            intent.putExtra("teacherList", this.teacherList);
+            intent.putExtra("courseList", this.courseList);
             this.context.startActivity(intent);
         }catch(InvalidInputException ex){
             RepetitionCreationActivity repetitionCreationActivity = (RepetitionCreationActivity)this.context;
@@ -39,6 +45,16 @@ public class RepetitionCreateTask extends AsyncTask<Void, Void, Void> {
             ex.showLoginActivity(this.context);
         }
         return null;
+    }
+
+    public RepetitionCreateTask setTeacherList(TeacherList teacherList){
+        this.teacherList = teacherList;
+        return this;
+    }
+
+    public RepetitionCreateTask setCourseList(CourseList courseList){
+        this.courseList = courseList;
+        return this;
     }
 
     public RepetitionCreateTask(Teacher teacher, Course course, RepetitionList repetitionList, Context context){

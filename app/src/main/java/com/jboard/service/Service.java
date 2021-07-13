@@ -109,7 +109,7 @@ public abstract class Service {
                 stringBuilder.append(line);
             }
             bufferedReader.close();
-            httpURLConnection.disconnect();System.out.println(stringBuilder.toString());
+            httpURLConnection.disconnect();
             JSONObject response = new JSONObject(stringBuilder.toString());
             this.checkResponse(response);
             return response;

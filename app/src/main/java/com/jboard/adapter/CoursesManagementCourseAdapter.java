@@ -84,9 +84,4 @@ public class CoursesManagementCourseAdapter extends BaseAdapter {
         }
         this.notifyDataSetChanged();
     }
-
-    public void addToList(Course course){
-        this.courseList.getCourseList().add(course);
-        this.notifyDataSetChanged();
-    }
 }

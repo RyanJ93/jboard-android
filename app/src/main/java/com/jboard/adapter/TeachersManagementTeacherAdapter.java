@@ -84,9 +84,4 @@ public class TeachersManagementTeacherAdapter extends BaseAdapter {
         }
         this.notifyDataSetChanged();
     }
-
-    public void addToList(Teacher teacher){
-        this.teacherList.getTeacherList().add(teacher);
-        this.notifyDataSetChanged();
-    }
 }

@@ -86,9 +86,4 @@ public class RepetitionsManagementRepetitionAdapter extends BaseAdapter {
         }
         this.notifyDataSetChanged();
     }
-
-    public void addToList(Repetition repetition){
-        this.repetitionList.getRepetitionList().add(repetition);
-        this.notifyDataSetChanged();
-    }
 }
