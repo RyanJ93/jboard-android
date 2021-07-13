@@ -4,8 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CourseCreationActivity"
-    android:background="#0D1019">
+    android:background="#0D1019"
+    tools:context=".CourseCreationActivity">
+
+    <TextView
+        android:id="@+id/repetitionCreationInputCourseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="60dp"
+        android:text="Course"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/courseCreationTitle"
@@ -50,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="85dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:background="@android:drawable/spinner_dropdown_background"
@@ -64,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="175dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:background="@android:drawable/spinner_dropdown_background"
@@ -78,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="210dp"
         android:text=""
         android:textColor="@color/error_red"
         android:visibility="invisible"
@@ -91,9 +103,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="120dp"
         android:textColor="@color/error_red"
         android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/repetitionCreationInputTeacherLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="150dp"
+        android:text="Teacher"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
