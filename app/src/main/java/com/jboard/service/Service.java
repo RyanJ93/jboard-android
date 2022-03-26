@@ -17,10 +17,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Service {
-    protected static boolean isDevelopmentMode = true;
+    protected static boolean isDevelopmentMode = false;
 
     protected static String getAPIEndpointBaseURL(){
-        return Service.isDevelopmentMode ? "http://192.168.2.1:7777" : "http://jboard.enricosola.com";
+        return Service.isDevelopmentMode ? "http://192.168.2.1:7777" : "http://jboard.enricosola.dev";
     }
 
     protected int[] ignoredErrorCodes;
